@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cost-aware-agent-router"
+version = "0.1.0"
+description = "Token budgets, complexity-based model routing, confidence early-exit and cost-per-decision analytics for LLM agents."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+live = ["anthropic>=1.0"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+costrouter = "costrouter.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["costrouter*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
